@@ -40,9 +40,8 @@ check the [cheatsheet](cheatsheet.md)
 ## declarative configuration management with NixOS
 
 - edit `/etc/nixos/configuration.nix`
-
 - `nixos-rebuild switch`
-
+- `nixos-option networking.hostName`
 - [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
 
 
@@ -51,7 +50,7 @@ check the [cheatsheet](cheatsheet.md)
 - [sshd]()
 - [httpd]()
 - [monit]() (?)
-- [rethinkdb]()
+- [rethinkdb]() (?)
 
 
 ### network
@@ -62,9 +61,9 @@ check the [cheatsheet](cheatsheet.md)
 
 ### user
 
-- [staruser]()
-- [staruser-sudo]()
-- [staruser-sshkey]()
+- [staruser]() normal user
+- [staruser-sudo]() with sudo
+- [staruser-sshkey]() with ssh publik key authentication
 
 
 ## conclusion
