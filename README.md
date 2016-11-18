@@ -1,4 +1,4 @@
-check the [cheatsheet]()
+check the [cheatsheet](cheatsheet.md)
 
 ## overview
 
