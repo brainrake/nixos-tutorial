@@ -14,8 +14,8 @@ check the [cheatsheet](cheatsheet.md)
 
 ## setup
 
-- download and install virtualbox
-- download nixos image
+- [download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [download NixOS VirtualBox appliance](https://nixos.org/nixos/download.html)
 - create vm (settings?)
 - check network
 
@@ -24,6 +24,7 @@ check the [cheatsheet](cheatsheet.md)
 
 - `sudo nix-channel --update`
 - `nix-env -qa cmatrix`
+- [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html)
 - `nix-env -i cmatrix`
 - `nix-env -e cmatrix`
 - `nix-env --rollback`
@@ -31,6 +32,7 @@ check the [cheatsheet](cheatsheet.md)
 
 ## isolated environments with `nix-shell`
 
+- `nix-shell -p hello`
 - `nix-shell -p python27Packages.somelib`
 - `nix-shell -p python35Packages.somelib`
 
@@ -40,6 +42,8 @@ check the [cheatsheet](cheatsheet.md)
 - edit `/etc/nixos/configuration.nix`
 
 - `nixos-rebuild switch`
+
+- [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
 
 
 ### service
