@@ -45,7 +45,7 @@ try:
 ## declarative configuration management with NixOS
 
 - edit `/etc/nixos/configuration.nix`
-  - eg. add `networking.hostName = "stardarab";`
+  - eg. add `networking.hostName = "star-darab";` before last `}`
 - `nixos-rebuild switch` to the new configuration
 - inspect `nixos-option networking.hostName`
 - search [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
@@ -60,13 +60,13 @@ try:
 
 ### network
 
-- [hosntame]()
-- [firewall]()
+- [hosntame](nixos/hostname.nix)
+- [firewall](nixos/firewall.nix)
 
 
 ### user
 
-- [staruser](nixos/star.nix) normal user
+- [staruser](nixos/staruser.nix) normal user
 - [staruser-sudo](nixos/staruser-sudo.nix) with sudo
 - [staruser-sshkey](nixos/staruser-sshkey.nix) with ssh publik key authentication
 

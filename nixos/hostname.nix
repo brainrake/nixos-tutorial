@@ -1,0 +1,3 @@
+{
+  networking.hostName = "star-darab";
+}
