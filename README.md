@@ -1,6 +1,6 @@
 check the [cheatsheet](cheatsheet.md)
 
-## overview
+## outline
 
 - setup (5m)
 - package management with `nix-env` (10m)
@@ -22,17 +22,22 @@ check the [cheatsheet](cheatsheet.md)
 
 ## package management with `nix-env`
 
-- `sudo nix-channel --update`
-- `nix-env -qa cmatrix`
-- [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html)
-- `nix-env -i cmatrix`
-- `nix-env -e cmatrix`
-- `nix-env --rollback`
+| | |
+|---|---|
+| update package list | `sudo nix-channel --update` |
+| search | `nix-env -qa cmatrix` |
+| live search | [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html) |
+| install | `nix-env -i cmatrix` |
+| uninstall | `nix-env -e cmatrix` |
+| rollback | `nix-env --rollback` |
 
 
 ## isolated environments with `nix-shell`
 
-- `nix-shell -p hello`
+- start a shell in an env with some packages available - `nix-shell -p hello`
+
+try:
+
 - `nix-shell -p python27Packages.somelib`
 - `nix-shell -p python35Packages.somelib`
 
@@ -40,17 +45,17 @@ check the [cheatsheet](cheatsheet.md)
 ## declarative configuration management with NixOS
 
 - edit `/etc/nixos/configuration.nix`
-- `nixos-rebuild switch`
-- `nixos-option networking.hostName`
-- [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
-
+  - eg. add `networking.hostName = "stardarab";`
+- `nixos-rebuild switch` to the new configuration
+- inspect `nixos-option networking.hostName`
+- search [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
+- `nixos-rebuild switch --rollback` to previous configuration
+- old configurations are available in bootloader
 
 ### service
 
-- [sshd]()
-- [httpd]()
-- [monit]() (?)
-- [rethinkdb]() (?)
+- [sshd](nixos/sshd.nix)
+- [httpd](nixos/httpd.nix)
 
 
 ### network
@@ -61,9 +66,9 @@ check the [cheatsheet](cheatsheet.md)
 
 ### user
 
-- [staruser]() normal user
-- [staruser-sudo]() with sudo
-- [staruser-sshkey]() with ssh publik key authentication
+- [staruser](nixos/star.nix) normal user
+- [staruser-sudo](nixos/staruser-sudo.nix) with sudo
+- [staruser-sshkey](nixos/staruser-sshkey.nix) with ssh publik key authentication
 
 
 ## conclusion
