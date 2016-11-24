@@ -5,7 +5,8 @@ check the [cheatsheet](cheatsheet.md)
 - setup (5m)
 - package management with `nix-env` (10m)
 - isolated environments with `nix-shell` (10m)
-- declarative operating system configuration with NixOS (5m)
+- declarative operating system configuration with NixOS
+  - introduction (5m)
   - service (5m)
   - network (5m)
   - user (5m)
@@ -45,12 +46,11 @@ try:
 ## declarative configuration management with NixOS
 
 - edit `/etc/nixos/configuration.nix`
-  - eg. add `networking.hostName = "star-darab";` before last `}`
+  - eg. add `networking.hostName = "star-darab";` before `}`
 - `nixos-rebuild switch` to the new configuration
 - inspect `nixos-option networking.hostName`
 - search [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
 - `nixos-rebuild switch --rollback` to previous configuration
-- old configurations are available in bootloader
 
 ### service
 
