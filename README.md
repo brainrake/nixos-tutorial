@@ -16,7 +16,7 @@ check the [cheatsheet](cheatsheet.md)
 
 - [download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [download NixOS VirtualBox appliance](https://nixos.org/nixos/download.html)
-- create vm (settings?)
+- create vm TODO: settings
 - check network
 
 
@@ -38,8 +38,8 @@ check the [cheatsheet](cheatsheet.md)
 
 try:
 
-- `nix-shell -p python27Packages.somelib`
-- `nix-shell -p python35Packages.somelib`
+- `nix-shell -p python27Packages.somelib` TODO
+- `nix-shell -p python35Packages.somelib` TODO
 
 
 ## declarative configuration management with NixOS
@@ -55,7 +55,7 @@ try:
 ### service
 
 - [sshd](nixos/sshd.nix)
-- [httpd](nixos/httpd.nix)
+- [nginx](nixos/nginx.nix)
 
 
 ### network
