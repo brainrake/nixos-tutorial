@@ -36,11 +36,10 @@ check the [cheatsheet](cheatsheet.md)
 ## isolated environments with `nix-shell`
 
 - start a shell in an env with some packages available - `nix-shell -p hello`
-
-try:
-
-- `nix-shell -p python27Packages.somelib` TODO
-- `nix-shell -p python35Packages.somelib` TODO
+- try different versions of python
+  - `nix-shell -p python27Packages.numpy`
+  - `nix-shell -p python35Packages.numpy`
+- `nix-shell` on its own will load `default.nix` or `shell.nix` from the current directory
 
 
 ## declarative configuration management with NixOS
@@ -48,7 +47,7 @@ try:
 - edit `/etc/nixos/configuration.nix`
   - eg. add `networking.hostName = "star-darab";` before `}`
 - `nixos-rebuild switch` to the new configuration
-- inspect `nixos-option networking.hostName`
+- see current value and documentation by running `nixos-option networking.hostName`
 - search [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
 - `nixos-rebuild switch --rollback` to previous configuration
 
