@@ -16,9 +16,15 @@ check the [cheatsheet](cheatsheet.md)
 ## setup
 
 - [download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-- [download NixOS VirtualBox appliance](https://nixos.org/nixos/download.html)
-- create vm TODO: settings
-- check network
+- [download NixOS VirtualBox appliance](https://nixos.org/nixos/download.html), double click, launch VM
+- login with demo/demo and run these commands:
+
+```
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable
+sudo nix-channel --update
+sudo nixos-rebuild switch
+sudo reboot
+```
 
 
 ## package management with `nix-env`
@@ -26,10 +32,10 @@ check the [cheatsheet](cheatsheet.md)
 | | |
 |---|---|
 | update package list | `sudo nix-channel --update` |
-| search | `nix-env -qa cmatrix` |
+| search | `nix-env -qa hello` |
 | live search | [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html) |
-| install | `nix-env -i cmatrix` |
-| uninstall | `nix-env -e cmatrix` |
+| install | `nix-env -i hello` |
+| uninstall | `nix-env -e hello` |
 | rollback | `nix-env --rollback` |
 
 
@@ -67,7 +73,12 @@ check the [cheatsheet](cheatsheet.md)
 
 - [staruser](nixos/staruser.nix) normal user
 - [staruser-sudo](nixos/staruser-sudo.nix) with sudo
-- [staruser-sshkey](nixos/staruser-sshkey.nix) with ssh publik key authentication
+- [staruser-sshkey](nixos/staruser-sshkey.nix) with ssh public key authentication
+
+
+### packages
+
+- `environment.systemPackages = [ pkgs.hello ];`
 
 
 ## conclusion
