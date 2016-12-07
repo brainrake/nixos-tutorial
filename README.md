@@ -59,7 +59,7 @@ sudo reboot
 
 ### service
 
-- `services.sshd.enable = true`
+- `services.sshd.enable = true;`
 - [nginx](nixos/nginx.nix)
 
 
