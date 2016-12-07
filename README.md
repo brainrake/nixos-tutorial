@@ -57,6 +57,8 @@ sudo reboot
 - search [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
 - `nixos-rebuild switch --rollback` to previous configuration
 
+let's try a few configuration options:
+
 ### service
 
 - `services.sshd.enable = true;`
@@ -76,9 +78,9 @@ sudo reboot
 - [staruser-sshkey](nixos/staruser-sshkey.nix) with ssh public key authentication
 
 
-### packages
+### package
 
-- `environment.systemPackages = [ pkgs.hello ];`
+- `environment.systemPackages = [ pkgs.hello pkgs.cmatrix ];`
 
 
 ## conclusion
