@@ -59,14 +59,14 @@ sudo reboot
 
 ### service
 
-- [sshd](nixos/sshd.nix)
+- `services.sshd.enable = true`
 - [nginx](nixos/nginx.nix)
 
 
 ### network
 
-- [hosntame](nixos/hostname.nix)
-- [firewall](nixos/firewall.nix)
+- `networking.hostname = "star-darab";`
+- `networking.firewall.allowedTCPPorts = [ 22 80 8000 ];`
 
 
 ### user
