@@ -20,7 +20,6 @@ check the [cheatsheet](cheatsheet.md)
 - login with demo/demo and run these commands:
 
 ```
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable
 sudo nix-channel --update
 sudo nixos-rebuild switch
 sudo reboot
@@ -58,6 +57,8 @@ sudo reboot
 - `nixos-rebuild switch --rollback` to previous configuration
 
 let's try a few configuration options:
+
+- `programs.bash.enableCompletion = true;`
 
 ### service
 
