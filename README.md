@@ -17,12 +17,12 @@ check the [cheatsheet](cheatsheet.md)
 
 - [download and install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [download NixOS VirtualBox appliance](https://nixos.org/nixos/download.html), double click, launch VM
-- login with demo/demo and run these commands:
+- login with `demo`/`demo` and run these commands:
 
 ```
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable
 sudo nix-channel --update
 sudo nixos-rebuild switch
-sudo reboot
 ```
 
 
@@ -31,38 +31,38 @@ sudo reboot
 | | |
 |---|---|
 | update package list | `sudo nix-channel --update` |
-| search | `nix-env -qa hello` |
+| search | `nix-env -qa vim` |
 | live search | [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html) |
-| install | `nix-env -i hello` |
-| uninstall | `nix-env -e hello` |
+| install | `nix-env -i vim` |
+| uninstall | `nix-env -e vim` |
 | rollback | `nix-env --rollback` |
 
 
 ## isolated environments with `nix-shell`
 
-- start a shell in an env with some packages available - `nix-shell -p hello`
-- try different versions of python
+- start a shell in an env with some packages available
   - `nix-shell -p python27Packages.numpy`
   - `nix-shell -p python35Packages.numpy`
+  - `nix-shell -p hello --run 'hello -t'`
 - `nix-shell` on its own will load `default.nix` or `shell.nix` from the current directory
 
 
 ## declarative configuration management with NixOS
 
 - edit `/etc/nixos/configuration.nix`
-  - eg. add `networking.hostName = "star-darab";` before `}`
+  - eg. add `programs.bash.enableCompletion = true;` before the last `}`
 - `nixos-rebuild switch` to the new configuration
-- see current value and documentation by running `nixos-option networking.hostName`
+- see option's current value and documentation by running `nixos-option programs.bash.enableCompletion`
 - search [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
 - `nixos-rebuild switch --rollback` to previous configuration
 
 let's try a few configuration options:
 
-- `programs.bash.enableCompletion = true;`
 
 ### service
 
 - `services.sshd.enable = true;`
+- `services.autoUpgrade.enable = true;`
 - [nginx](nixos/nginx.nix)
 
 
@@ -81,12 +81,12 @@ let's try a few configuration options:
 
 ### package
 
-- `environment.systemPackages = [ pkgs.hello pkgs.cmatrix ];`
+- `environment.systemPackages = [ pkgs.vim pkgs.cmatrix ];`
 
 
 ## conclusion
 
-- declarative
+- declarative - say what you want, not how to get there
 - safe (atomic, rollback, isolated, consistent)
 - reliable (deterministic, reproducible)
-- fast (lazy)
+- fast (lazy, perfect cache)
