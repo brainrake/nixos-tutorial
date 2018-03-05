@@ -2,7 +2,7 @@
 
 | action | Ubuntu | Nix | difference |
 |:---|:---|:---|:---|
-| update package list | `sudo apt-get update` | `sudo nix-chanel --update` | |
+| update package list | `sudo apt-get update` | `sudo nix-channel --update` | |
 | install | `sudo apt-get install <package>` | `nix-env -i <package>` | no sudo, atomic, local env |
 | upgrade installed | `sudo apt-get upgrade` | `nix-env -u` | no sudo, atomic, local env |
 | remove | `sudo apt-get remove` | `nix-env -e` | no sudo, atomic, local env |
