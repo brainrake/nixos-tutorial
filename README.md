@@ -31,7 +31,7 @@ sudo nixos-rebuild switch
 | | |
 |---|---|
 | update package list | `sudo nix-channel --update` |
-| search | `nix-env -qa vim` |
+| search | `nix search vim` |
 | live search | [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html) |
 | install | `nix-env -i vim` |
 | uninstall | `nix-env -e vim` |
