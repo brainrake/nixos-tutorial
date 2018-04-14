@@ -2,13 +2,13 @@
 
 | action | Ubuntu | Nix | difference |
 |:---|:---|:---|:---|
-| update package list | `sudo apt-get update` | `sudo nix-channel --update` | |
-| install | `sudo apt-get install <package>` | `nix-env -i <package>` | no sudo, atomic, local env |
-| upgrade installed | `sudo apt-get upgrade` | `nix-env -u` | no sudo, atomic, local env |
-| remove | `sudo apt-get remove` | `nix-env -e` | no sudo, atomic, local env |
-| undo last operation | ... | `nix-env --rollback` | no sudo, atomic, local env |
+| update package list | `sudo apt update` | `sudo nix-channel --update` | |
+| install | `sudo apt install <package>` | `nix-env -i <package>` | no root, atomic, local env |
+| upgrade installed | `sudo apt upgrade` | `nix-env -u` | no root, atomic, local env |
+| remove | `sudo apt remove <package>` | `nix-env -e` | no root, atomic, local env |
+| undo last operation | ... | `nix-env --rollback` | no root, atomic, local env |
 | list installed | `dpkg -l`| `nix-env -q` | local env |
-| search | `apt-cache search <query>` | `nix-env -qa <query>` | use [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html)  |
+| search | `apt search <query>` | `nix search <query>` | use [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html)  |
 
 
 ## Nix Isolated Environments
