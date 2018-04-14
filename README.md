@@ -62,14 +62,13 @@ let's try a few configuration options:
 ### service
 
 - `services.sshd.enable = true;`
-- `services.autoUpgrade.enable = true;`
 - [nginx](nixos/nginx.nix)
 
 
-### network
+### system
 
-- `networking.hostname = "star-darab";`
-- `networking.firewall.allowedTCPPorts = [ 22 80 8000 ];`
+- `system.autoUpgrade.enable = true;`
+- `environment.systemPackages = [ pkgs.vim pkgs.cmatrix ];`
 
 
 ### user
@@ -79,9 +78,10 @@ let's try a few configuration options:
 - [staruser-sshkey](nixos/staruser-sshkey.nix) with ssh public key authentication
 
 
-### package
+### network
 
-- `environment.systemPackages = [ pkgs.vim pkgs.cmatrix ];`
+- `networking.hostname = "star-darab";`
+- `networking.firewall.allowedTCPPorts = [ 22 80 8000 ];`
 
 
 ## conclusion
