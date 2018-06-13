@@ -80,7 +80,7 @@ let's try a few configuration options:
 
 ### network
 
-- `networking.hostname = "star-darab";`
+- `networking.hostName = "star-darab";`
 - `networking.firewall.allowedTCPPorts = [ 22 80 8000 ];`
 
 
