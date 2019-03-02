@@ -1,6 +1,6 @@
 {
   security.sudo.enable = true;
-  users.users.user = {
+  users.users.myuser = {
     isNormalUser = true;
     password = "changeme";
     extraGroups = [ "wheel" ];
