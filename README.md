@@ -70,7 +70,7 @@ let's try a few configuration options:
 ### system
 
 - `system.autoUpgrade.enable = true;`
-  - don't forget to check the documentation [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html)
+  - don't forget to check the documentation [nixos.org/nixos/options.html#autoupgrade](https://nixos.org/nixos/options.html#autoupgrade)
 - `environment.systemPackages = [ pkgs.vim pkgs.cmatrix ];`
   - all users can run `cmatrix`
 
