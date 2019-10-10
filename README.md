@@ -40,7 +40,7 @@ check the [cheatsheet](cheatsheet.md)
     - `toilet hello`
     - `Ctrl+D` to exit nix-shell
     - `toilet hello`
-  - `nix-shell -p toilet --run 'toilet --gay hello`
+  - `nix-shell -p toilet --run 'toilet --gay hello'`
   - [python example](python.md)
 - `nix-shell` on its own will load `default.nix` or `shell.nix` from the current directory, where you can define an environment for a project
 
