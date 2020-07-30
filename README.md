@@ -84,7 +84,7 @@ let's try a few configuration options:
 
 ### network
 
-- `networking.hostname = "darkstar";`
+- `networking.hostName = "darkstar";`
 - `networking.firewall.allowedTCPPorts = [ 22 80 8000 ];`
 
 
