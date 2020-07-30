@@ -3,11 +3,11 @@
 | action | Ubuntu | Nix | difference |
 |:---|:---|:---|:---|
 | update package list | `sudo apt update` | `sudo nix-channel --update` | |
-| install | `sudo apt install <package>` | `nix-env -i <package>` | no root, atomic, local env |
-| upgrade installed | `sudo apt upgrade` | `nix-env -u` | no root, atomic, local env |
-| remove | `sudo apt remove <package>` | `nix-env -e` | no root, atomic, local env |
-| undo last operation | ... | `nix-env --rollback` | no root, atomic, local env |
-| list installed | `dpkg -l`| `nix-env -q` | local env |
+| install | `sudo apt install <package>` | `nix-env -i <package>` | no root, atomic, per user |
+| upgrade installed | `sudo apt upgrade` | `nix-env -u` | no root, atomic, per user |
+| remove | `sudo apt remove <package>` | `nix-env -e <package>` | no root, atomic, per user |
+| undo last operation | ... | `nix-env --rollback` | no root, atomic, per user |
+| list installed | `dpkg -l`| `nix-env -q` | per user |
 | search | `apt search <query>` | `nix search <query>` | use [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html)  |
 
 
@@ -24,7 +24,7 @@
 
 | command | action | notes |
 |:---|:---|:---|
-| edit `/etc/nixos/configuration.nix` | define new system configuration | |
+| edit `/etc/nixos/configuration.nix` | define new system configuration | running system is unaffected |
 | `nixos-rebuild switch` | switch to the configuration defined in `/etc/nixos/configuration.nix` | atomic* |
 | `nixos-rebuild switch --rollback` | switch to previous configuration | atomic*
 | `nixos-option <option>` | show option's current value and documentation | |
