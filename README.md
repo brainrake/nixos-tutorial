@@ -54,8 +54,8 @@ check out the [cheat sheet](cheatsheet.md)
 - edit `/etc/nixos/configuration.nix`
   - eg. add `services.openssh.enable = true;` before the last `}`
 - `nixos-rebuild switch` to the new configuration
-- see option's current value and documentation by running `nixos-option services.openssh.enable`
-- search [search.nixos.org/options](https://search.nixos.org/options), click the result, click the link after "Declared in:"
+- `nixos-option services.openssh.enable` to see the option's current value and documentation
+- find the option on [search.nixos.org/options](https://search.nixos.org/options), click the result, click the link after "Declared in:" and see The Source
 - `nixos-rebuild switch --rollback` to previous configuration
 
 let's try a few configuration options:
