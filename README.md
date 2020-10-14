@@ -37,15 +37,13 @@ check out the [cheat sheet](cheatsheet.md)
 ## `nix-shell` isolated environments
 
 - start a shell in an environment with some packages available, and run some commands in it:
-- `nix-shell -p toilet`
-  - `toilet NixOS`
-  - `Ctrl+D` to exit nix-shell
-  - `toilet NixOS` fails
-
+  - `nix-shell -p toilet`
+    - `toilet NixOS`
+    - `Ctrl+D` to exit nix-shell
+    - `toilet NixOS` fails
 - start a shell with packages and run a command in it:
   - `nix-shell -p toilet --run 'toilet --gay hello'`
-  - try a [python example](python.md)
-
+- try a [python example](python.md)
 - `nix-shell` on its own will load `default.nix` or `shell.nix` from the current directory, where you can define an environment for a project.
 
 
