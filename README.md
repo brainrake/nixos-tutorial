@@ -1,4 +1,4 @@
-check out the [cheatsheet](cheatsheet.md)
+check out the [cheat sheet](cheatsheet.md)
 
 ## outline
 
