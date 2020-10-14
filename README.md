@@ -1,11 +1,11 @@
-check the [cheatsheet](cheatsheet.md)
+check out the [cheatsheet](cheatsheet.md)
 
 ## outline
 
 - setup (5m)
-- `nix-env` package management (10m)
-- `nix-shell` isolated environments (10m)
-- NixOS declarative operating system configuration
+- **nix-env** package management (10m)
+- **nix-shell** isolated environments (10m)
+- **NixOS** declarative operating system configuration
   - introduction (5m)
   - service (5m)
   - network (5m)
@@ -19,30 +19,34 @@ check the [cheatsheet](cheatsheet.md)
 - [download NixOS VirtualBox appliance](https://nixos.org/nixos/download.html), double click, launch VM
 - log in with `demo`/`demo`
 - open a terminal, eg. on the bottom left corner of the screen, click the  Launcher button → Applications → System → Terminal
+- try running the `commands` below
 
+## `nix-env` package management
 
-## package management with `nix-env`
+- each user has a nix [profile](https://nixos.org/manual/nix/stable/#sec-profiles), pointing to the current user environment, that is a set of installed packages, managed via `nix-env`. Only trusted channels are used by default, so updating the package lists is the only operation requiring root.
 
 | | | |
-|---|---|---|
+| --- | --- | --- |
 | update package list | `sudo nix-channel --update` ||
-| search | `nix search hello` ||
-| live search | [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html) ||
-| install | `nix-env -i hello` | run with `hello` |
+| search | `nix search hello` | also try [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html) |
+| install | `nix-env -iA nixos.hello` | run it with `hello` |
 | uninstall | `nix-env -e hello` | running `hello` fails |
 | rollback | `nix-env --rollback` | `hello` is  back |
 
 
-## isolated environments with `nix-shell`
+## `nix-shell` isolated environments
 
-- start a shell in an environment with some packages available:
-  - `nix-shell -p toilet`
-    - `toilet hello`
-    - `Ctrl+D` to exit nix-shell
-    - `toilet hello`
+- start a shell in an environment with some packages available, and run some commands in it:
+- `nix-shell -p toilet`
+  - `toilet NixOS`
+  - `Ctrl+D` to exit nix-shell
+  - `toilet NixOS` fails
+
+- start a shell with packages and run a command in it:
   - `nix-shell -p toilet --run 'toilet --gay hello'`
-  - [python example](python.md)
-- `nix-shell` on its own will load `default.nix` or `shell.nix` from the current directory, where you can define an environment for a project
+  - try a [python example](python.md)
+
+- `nix-shell` on its own will load `default.nix` or `shell.nix` from the current directory, where you can define an environment for a project.
 
 
 ## NixOS declarative operating system configuration
@@ -91,6 +95,10 @@ let's try a few configuration options:
 ## conclusion
 
 - declarative - say what you want, not how to get there
-- safe (atomic, rollback, isolated, consistent)
+- safe (atomic, rollback, isolated, consistent, hash-checked)
 - reliable (deterministic, reproducible)
-- fast (lazy, perfect cache)
+- fast (lazy, hash-based store, binary cache)
+- great for repeatable builds and declarative operating system configuration
+
+
+#### [learn more](https://nixos.org/learn.html)
