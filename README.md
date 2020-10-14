@@ -28,7 +28,7 @@ check out the [cheat sheet](cheatsheet.md)
 | | | |
 | --- | --- | --- |
 | update package list | `sudo nix-channel --update` ||
-| search | `nix search hello` | also try [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html) |
+| search | `nix search hello` | also try [search.nixos.org/packages](https://search.nixos.org/packages) |
 | install | `nix-env -iA nixos.hello` | run it with `hello` |
 | uninstall | `nix-env -e hello` | running `hello` fails |
 | rollback | `nix-env --rollback` | `hello` is  back |
@@ -55,7 +55,7 @@ check out the [cheat sheet](cheatsheet.md)
   - eg. add `services.openssh.enable = true;` before the last `}`
 - `nixos-rebuild switch` to the new configuration
 - see option's current value and documentation by running `nixos-option services.openssh.enable`
-- search [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html), click the result, click the link after "Declared in:"
+- search [search.nixos.org/options](https://search.nixos.org/options), click the result, click the link after "Declared in:"
 - `nixos-rebuild switch --rollback` to previous configuration
 
 let's try a few configuration options:
@@ -74,7 +74,7 @@ let's try a few configuration options:
 ### system
 
 - `system.autoUpgrade.enable = true;`
-  - don't forget to check the documentation [nixos.org/nixos/options.html#autoupgrade](https://nixos.org/nixos/options.html#autoupgrade)
+  - don't forget to check the documentation [search.nixos.org/options?query=autoupgrade](https://search.nixos.org/options?query=autoupgrade)
 - `environment.systemPackages = [ pkgs.vim pkgs.cmatrix ];`
   - all users can run `cmatrix`
 
