@@ -5,7 +5,7 @@
 | action | Ubuntu | Nix | notes |
 |:---|:---|:---|:---|
 | update package list | `sudo apt update` | `sudo nix-channel --update` | |
-| search | `apt search <query>` | `nix search <query>` | use [nixos.org/nixos/packages.html](https://nixos.org/nixos/packages.html)  |
+| search | `apt search <query>` | `nix search <query>` | also try [search.nixos.org/packages](https://search.nixos.org/packages)  |
 | install | `sudo apt install <package>` | `nix-env -i <package>` | no root, atomic, per user |
 | upgrade installed | `sudo apt upgrade` | `nix-env -u` | no root, atomic, per user |
 | remove | `sudo apt remove <package>` | `nix-env -e <package>` | no root, atomic, per user |
@@ -30,6 +30,6 @@
 | edit `/etc/nixos/configuration.nix` | define new system configuration | running system is unaffected |
 | `nixos-rebuild switch` | switch to the configuration defined in `/etc/nixos/configuration.nix` | atomic* |
 | `nixos-rebuild switch --rollback` | switch to previous configuration | atomic*
-| `nixos-option <option>` | show option value and documentation | also try [nixos.org/nixos/options.html](https://nixos.org/nixos/options.html) |
+| `nixos-option <option>` | show option value and documentation | also try [search.nixos.org/options](https://search.nixos.org/options) |
 
 *services can fail to start
