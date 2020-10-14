@@ -23,7 +23,7 @@
 | `nix-shell --pure` | same, but outside env is inaccessible |
 
 
-### NixOS configuration management
+### NixOS declarative operating system configuration management
 
 | command | result | notes |
 |:---|:---|:---|
