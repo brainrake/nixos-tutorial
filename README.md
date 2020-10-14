@@ -23,7 +23,8 @@ check out the [cheat sheet](cheatsheet.md)
 
 ## `nix-env` package management
 
-- each user has a nix [profile](https://nixos.org/manual/nix/stable/#sec-profiles), pointing to the current user environment, that is a set of installed packages, managed via `nix-env`. Only trusted channels are used by default, so updating the package lists is the only operation requiring root.
+- each user has a nix [profile](https://nixos.org/manual/nix/stable/#sec-profiles), pointing to the current user environment, that is a set of installed packages, managed via `nix-env`
+- only trusted channels are used by default, so updating the package lists is the only operation requiring root.
 
 | | | |
 | --- | --- | --- |
